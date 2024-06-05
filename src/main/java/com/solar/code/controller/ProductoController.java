@@ -28,8 +28,8 @@ public class ProductoController {
     return productoService.encontrarProductoPorID(data_id);
   }
 
-  @DeleteMapping("/eliminarProducto/{producto_id}")
-  public boolean eliminarProducto(@PathVariable Long producto_id) {
-    return productoService.eliminarProducto(producto_id);
+  @DeleteMapping("/eliminarData/{data_id}")
+  public boolean eliminarProducto(@PathVariable Long data_id) {
+    return productoService.eliminarProducto(data_id);
   }
 }

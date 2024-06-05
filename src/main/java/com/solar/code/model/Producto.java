@@ -2,7 +2,7 @@ package com.solar.code.model;
 
 import jakarta.persistence.*;
 @Entity
-@Table(name="Producto")
+@Table(name="Data")
 public class Producto {
   // ATRIBUTOS
   @Id
