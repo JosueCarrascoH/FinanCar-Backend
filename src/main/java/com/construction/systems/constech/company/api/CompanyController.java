@@ -20,7 +20,7 @@ import java.util.List;
 @Tag(name = "Data", description = "Everything about your Companies")
 @AllArgsConstructor
 @RestController
-@RequestMapping("data")
+@RequestMapping(path="data")
 @CrossOrigin(origins = "http://localhost:4200", allowedHeaders = {"Content-Type", "Authorization"},methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.DELETE,RequestMethod.PUT})
 public class CompanyController {
     private final CompanyService CompanyService;
