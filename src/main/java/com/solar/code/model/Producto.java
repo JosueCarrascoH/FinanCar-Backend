@@ -4,127 +4,148 @@ import jakarta.persistence.*;
 @Entity
 @Table(name="Producto")
 public class Producto {
-  //ATRIBUTOS
+  // ATRIBUTOS
   @Id
   @Column
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long producto_id;
-  @ManyToOne(cascade = CascadeType.ALL ) @JoinColumn(name="categoria_id")
-  private Categoria categoria;
+  private Long id;
+
   @Column
-  private double precio;
+  private String moneda;
+
   @Column
-  private String nombre;
+  private Number precioVivienda;
+
   @Column
-  private String marca;
-  @Column(length = 2000)
-  private String descripcion;
-  @Column(columnDefinition = "TEXT")
-  private String imagen;
+  private Number cuotaInicial;
+
   @Column
-  private String ficha_tecnica;
-  @Column(unique = true)
-  private String sku;
+  private Number tasaEfectiva;
+
   @Column
-  private int stock;
+  private Number numeroCuotas;
+
+  @Column
+  private Number periodoGracia;
+
+  @Column
+  private Number periodoGraciaParcial;
+
+  @Column
+  private Number periodoGraciaTotal;
+
+  @Column
+  private Number cuota;
+
+  @Column
+  private Number userId;
+
   // CONSTRUCTORES
   public Producto() {
   }
 
-  public Producto(Long producto_id, Categoria categoria, double precio, String nombre, String marca, String descripcion, String imagen, String ficha_tecnica, String sku, int stock) {
-    this.producto_id = producto_id;
-    this.categoria = categoria;
-    this.precio = precio;
-    this.nombre = nombre;
-    this.marca = marca;
-    this.descripcion = descripcion;
-    this.imagen = imagen;
-    this.ficha_tecnica = ficha_tecnica;
-    this.sku = sku;
-    this.stock = stock;
+  public Producto(Long id, String moneda, Number precioVivienda, Number cuotaInicial, Number tasaEfectiva,
+                  Number numeroCuotas, Number periodoGracia, Number periodoGraciaParcial, Number periodoGraciaTotal, Number cuota, Number userId) {
+    this.id = id;
+    this.moneda = moneda;
+    this.precioVivienda = precioVivienda;
+    this.cuotaInicial = cuotaInicial;
+    this.tasaEfectiva = tasaEfectiva;
+    this.numeroCuotas = numeroCuotas;
+    this.periodoGracia = periodoGracia;
+    this.periodoGraciaParcial = periodoGraciaParcial;
+    this.periodoGraciaTotal = periodoGraciaTotal;
+    this.cuota = cuota;
+    this.userId = userId;
   }
 
   // GETTERS
-
-  public Long getProducto_id() {
-    return producto_id;
+  public Long getId() {
+    return id;
   }
 
-  public Categoria getCategoria() {
-    return categoria;
+  public String getMoneda() {
+    return moneda;
   }
 
-  public double getPrecio() {
-    return precio;
+  public Number getPrecioVivienda() {
+    return precioVivienda;
   }
 
-  public String getNombre() {
-    return nombre;
+  public Number getCuotaInicial() {
+    return cuotaInicial;
   }
 
-  public String getMarca() {
-    return marca;
+  public Number getTasaEfectiva() {
+    return tasaEfectiva;
   }
 
-  public String getDescripcion() {
-    return descripcion;
+  public Number getNumeroCuotas() {
+    return numeroCuotas;
   }
 
-  public String getImagen() {
-    return imagen;
+  public Number getPeriodoGracia() {
+    return periodoGracia;
   }
 
-  public String getFicha_tecnica() {
-    return ficha_tecnica;
+  public Number getPeriodoGraciaParcial() {
+    return periodoGraciaParcial;
   }
 
-  public String getSku() {
-    return sku;
+  public Number getPeriodoGraciaTotal() {
+    return periodoGraciaTotal;
   }
 
-  public int getStock() {
-    return stock;
+  public Number getCuota() {
+    return cuota;
+  }
+
+  public Number getUserId() {
+    return userId;
   }
 
   // SETTERS
-
-  public void setProducto_id(Long producto_id) {
-    this.producto_id = producto_id;
+  public void setId(Long id) {
+    this.id = id;
   }
 
-  public void setCategoria(Categoria categoria) {
-    this.categoria = categoria;
+  public void setMoneda(String moneda) {
+    this.moneda = moneda;
   }
 
-  public void setPrecio(double precio) {
-    this.precio = precio;
+  public void setPrecioVivienda(Number precioVivienda) {
+    this.precioVivienda = precioVivienda;
   }
 
-  public void setNombre(String nombre) {
-    this.nombre = nombre;
+  public void setCuotaInicial(Number cuotaInicial) {
+    this.cuotaInicial = cuotaInicial;
   }
 
-  public void setMarca(String marca) {
-    this.marca = marca;
+  public void setTasaEfectiva(Number tasaEfectiva) {
+    this.tasaEfectiva = tasaEfectiva;
   }
 
-  public void setDescripcion(String descripcion) {
-    this.descripcion = descripcion;
+  public void setNumeroCuotas(Number numeroCuotas) {
+    this.numeroCuotas = numeroCuotas;
   }
 
-  public void setImagen(String imagen) {
-    this.imagen = imagen;
+  public void setPeriodoGracia(Number periodoGracia) {
+    this.periodoGracia = periodoGracia;
   }
 
-  public void setFicha_tecnica(String ficha_tecnica) {
-    this.ficha_tecnica = ficha_tecnica;
+  public void setPeriodoGraciaParcial(Number periodoGraciaParcial) {
+    this.periodoGraciaParcial = periodoGraciaParcial;
   }
 
-  public void setSku(String sku) {
-    this.sku = sku;
+  public void setPeriodoGraciaTotal(Number periodoGraciaTotal) {
+    this.periodoGraciaTotal = periodoGraciaTotal;
   }
 
-  public void setStock(int stock) {
-    this.stock = stock;
+  public void setCuota(Number cuota) {
+    this.cuota = cuota;
+  }
+
+  public void setUserId(Number userId) {
+    this.userId = userId;
   }
 }

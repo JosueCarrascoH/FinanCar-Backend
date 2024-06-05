@@ -3,55 +3,73 @@ package com.solar.code.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="Categoria")
+@Table(name="User")
 public class Categoria {
   // ATRIBUTOS
-  @Id  @Column  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long categoria_id;
+  @Id
   @Column
-  private String nombre;
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
+
   @Column
-  private String descripcion;
+  private String name;
+
+  @Column
+  private String email;
+
   @Column(unique = true)
-  private String sku;
+  private String password;
+
+  @Column(unique = true)
+  private String repassword;
+
   // CONSTRUCTORES
   public Categoria() {
   }
 
-  public Categoria(Long categoria_id, String nombre, String descripcion, String sku) {
-    this.categoria_id = categoria_id;
-    this.nombre = nombre;
-    this.descripcion = descripcion;
-    this.sku = sku;
+  public Categoria(Long id, String name, String email, String password, String repassword) {
+    this.id = id;
+    this.name = name;
+    this.email = email;
+    this.password = password;
+    this.repassword = repassword;
   }
 
   // GETTERS
-  public Long getCategoria_id() {
-    return categoria_id;
+  public Long getId() {
+    return id;
   }
 
-  public String getNombre() {
-    return nombre;
+  public String getName() {
+    return name;
   }
 
-  public String getDescripcion() {
-    return descripcion;
+  public String getEmail() {
+    return email;
   }
 
-  public String getSku() {
-    return sku;
+  public String getPassword() {
+    return password;
+  }
+
+  public String getRepassword() {
+    return repassword;
   }
 
   // SETTERS
-  public void setNombre(String nombre) {
-    this.nombre = nombre;
+  public void setName(String name) {
+    this.name = name;
   }
 
-  public void setDescripcion(String descripcion) {
-    this.descripcion = descripcion;
+  public void setEmail(String email) {
+    this.email = email;
   }
 
-  public void setSku(String sku) {
-    this.sku = sku;
+  public void setPassword(String password) {
+    this.password = password;
+  }
+
+  public void setRepassword(String repassword) {
+    this.repassword = repassword;
   }
 }

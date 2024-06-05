@@ -10,33 +10,29 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path= "api/v1/categoria")
+@RequestMapping(path= "api/v1/user")
 public class CategoriaController {
   @Autowired
   CategoriaService categoriaService;
-  @PostMapping("/guardarCategoria")
+  @PostMapping("/guardarUser")
   public Categoria guardarCategoria(@RequestBody Categoria categoria) {
     return categoriaService.guardarCategoria(categoria);
   }
-  @GetMapping("/obtenerCategorias")
+  @GetMapping("/obtenerUser")
   public List<Categoria> obtenerCategorias() {
     return categoriaService.consultarCategorias();
   }
-  @GetMapping("/encontrarCategoriaPorId/{categoria_id}")
-  public Categoria encontrarCategoriaPoriD(@PathVariable Long categoria_id){
-    return categoriaService.encontrarCategoriaPorId(categoria_id);
+  @GetMapping("/encontrarUserPorId/{user_id}")
+  public Categoria encontrarCategoriaPoriD(@PathVariable Long user_id){
+    return categoriaService.encontrarCategoriaPorId(user_id);
   }
-  @GetMapping("/encontrarCategoriaPorSku/{sku}")
-  public Categoria encontrarCategoriaPorSku(@PathVariable String sku){
-    return categoriaService.encontrarCategoriaPorSku(sku);
-  }
-  @PutMapping("/actualizarCategoria")
+  @PutMapping("/actualizarUsera")
   public Categoria actualizarCategoria(@RequestBody Categoria categoria){
     return categoriaService.actualizarCategoria(categoria);
   }
 
-  @DeleteMapping("/eliminarCategoria/{categoria_id}")
-  public boolean eliminarCategoria(@PathVariable Long categoria_id){
-    return categoriaService.eliminarCategoria(categoria_id);
+  @DeleteMapping("/eliminarUser/{user_id}")
+  public boolean eliminarCategoria(@PathVariable Long user_id){
+    return categoriaService.eliminarCategoria(user_id);
   }
 }
